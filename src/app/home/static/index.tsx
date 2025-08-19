@@ -272,4 +272,14 @@ export const personalProjects: IPersonalProject[] = [
     ],
     sourceCodeURL: "https://github.com/gangsararyop/infokes-assessment",
   },
+  {
+    id: 2,
+    title: "Portfolio Website",
+    image: "",
+    websiteURL: "https://portfolio-745u.vercel.app/",
+    description:
+      "A personal portfolio website showcasing my background, skills, and projects.",
+    stacks: ["Node.js", "Typescript", "Next.js", "TailwindCSS"],
+    sourceCodeURL: "https://github.com/gangsararyop/portfolio",
+  },
 ];
