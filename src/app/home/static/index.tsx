@@ -1,26 +1,185 @@
-export const sections: Record<"id" | "label", string>[] = [
+import { LANG } from "./lang";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// This file holds all content data in BOTH English (*EN) and Indonesian (*ID).
+// The exported arrays resolve to the active language via LANG (see ./lang.ts).
+// Edit the copy here, not in the section components. To switch the whole site
+// back to English, just set LANG = "en" in ./lang.ts.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Sections (nav labels + scroll-spy ids) ──────────────────────────────────
+// `id` must stay the same across languages (used by nav + scroll-spy); only the
+// visible `label` is translated.
+const sectionsEN: Record<"id" | "label", string>[] = [
+  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
+  { id: "work", label: "Work" },
+  { id: "experience", label: "Background" },
+  { id: "contact", label: "Contact" },
+];
+
+const sectionsID: Record<"id" | "label", string>[] = [
+  { id: "about", label: "Tentang" },
+  { id: "services", label: "Layanan" },
+  { id: "work", label: "Karya" },
+  { id: "experience", label: "Latar Belakang" },
+  { id: "contact", label: "Kontak" },
+];
+
+export const sections = LANG === "id" ? sectionsID : sectionsEN;
+
+// ── Services ────────────────────────────────────────────────────────────────
+export interface IService {
+  id: number;
+  title: string;
+  tagline: string;
+  description: string;
+  deliverables: string[];
+}
+
+const servicesEN: IService[] = [
   {
-    id: "about",
-    label: "About",
+    id: 0,
+    title: "Landing Page & Company Profile",
+    tagline: "Make a strong first impression online.",
+    description:
+      "A fast, modern, mobile-friendly website that introduces your business and turns visitors into customers. Perfect for promoting a product, service, or brand with clear calls-to-action that drive enquiries.",
+    deliverables: [
+      "Responsive design",
+      "SEO-friendly",
+      "Contact / WhatsApp CTA",
+      "Fast loading",
+    ],
   },
   {
-    id: "experience",
-    label: "Experience",
+    id: 1,
+    title: "Web Apps & Custom Dashboards",
+    tagline: "Run your business from one place.",
+    description:
+      "Tailor-made web applications with secure login, admin panels, and data management built around the way you actually work. From customer-facing platforms to internal tools, I build systems that scale with your business.",
+    deliverables: [
+      "User authentication",
+      "Admin dashboard",
+      "Data management",
+      "Reports & analytics",
+    ],
   },
   {
-    id: "professional-project",
-    label: "Professional Project",
+    id: 2,
+    title: "E-Commerce & Online Store",
+    tagline: "Sell online, get paid automatically.",
+    description:
+      "Online stores with product catalogs, shopping carts, and integrated payment gateways such as Midtrans so customers can purchase directly. Includes order tracking and an admin panel to manage products and transactions.",
+    deliverables: [
+      "Payment gateway (Midtrans)",
+      "Product & order management",
+      "Cart & checkout",
+      "Sales tracking",
+    ],
   },
   {
-    id: "personal-project",
-    label: "Personal Project",
+    id: 3,
+    title: "Management Systems",
+    tagline: "Digitize and streamline your operations.",
+    description:
+      "Internal systems built around your operations to replace spreadsheets and manual work â€” including HRIS (attendance, payroll, leave), POS / cashier, inventory & stock, CRM, learning management (LMS), and booking / reservation systems.",
+    deliverables: [
+      "HRIS",
+      "POS / Cashier",
+      "Inventory",
+      "CRM",
+      "LMS",
+      "Booking / Reservation",
+    ],
   },
   {
-    id: "contact",
-    label: "Contact",
+    id: 4,
+    title: "Maintenance & Revamp",
+    tagline: "Keep your site fast, secure & up to date.",
+    description:
+      "Already have a website? I can modernize an outdated design, fix bugs, improve performance, or take over ongoing maintenance so your site stays secure, fast, and reliable as your business grows.",
+    deliverables: [
+      "Redesign / revamp",
+      "Performance tuning",
+      "Bug fixes",
+      "Ongoing support",
+    ],
   },
 ];
 
+const servicesID: IService[] = [
+  {
+    id: 0,
+    title: "Landing Page & Profil Perusahaan",
+    tagline: "Buat kesan pertama yang kuat secara online.",
+    description:
+      "Website yang cepat, modern, dan ramah perangkat seluler untuk memperkenalkan bisnis Anda dan mengubah pengunjung menjadi pelanggan. Cocok untuk mempromosikan produk, layanan, atau brand dengan ajakan bertindak yang jelas untuk mendorong calon pelanggan menghubungi Anda.",
+    deliverables: [
+      "Desain responsif",
+      "Ramah SEO",
+      "Tombol Kontak / WhatsApp",
+      "Loading cepat",
+    ],
+  },
+  {
+    id: 1,
+    title: "Aplikasi Web & Dashboard Custom",
+    tagline: "Kelola bisnis Anda dari satu tempat.",
+    description:
+      "Aplikasi web yang dibuat khusus dengan login yang aman, panel admin, dan pengelolaan data yang dirancang sesuai cara kerja Anda. Mulai dari platform untuk pelanggan hingga tools internal, saya membangun sistem yang bisa berkembang bersama bisnis Anda.",
+    deliverables: [
+      "Autentikasi pengguna",
+      "Dashboard admin",
+      "Pengelolaan data",
+      "Laporan & analitik",
+    ],
+  },
+  {
+    id: 2,
+    title: "E-Commerce & Toko Online",
+    tagline: "Jual online, terima pembayaran otomatis.",
+    description:
+      "Toko online dengan katalog produk, keranjang belanja, dan integrasi payment gateway seperti Midtrans agar pelanggan bisa langsung membeli. Termasuk pelacakan pesanan dan panel admin untuk mengelola produk dan transaksi.",
+    deliverables: [
+      "Payment gateway (Midtrans)",
+      "Manajemen produk & pesanan",
+      "Keranjang & checkout",
+      "Pelacakan penjualan",
+    ],
+  },
+  {
+    id: 3,
+    title: "Sistem Manajemen",
+    tagline: "Digitalkan dan rapikan operasional Anda.",
+    description:
+      "Sistem internal yang dirancang sesuai operasional Anda untuk menggantikan spreadsheet dan pekerjaan manual — termasuk HRIS (absensi, payroll, cuti), POS / kasir, inventaris & stok, CRM, learning management (LMS), serta sistem booking / reservasi.",
+    deliverables: [
+      "HRIS",
+      "POS / Kasir",
+      "Inventaris",
+      "CRM",
+      "LMS",
+      "Booking / Reservasi",
+    ],
+  },
+  {
+    id: 4,
+    title: "Maintenance & Revamp",
+    tagline: "Jaga situs Anda tetap cepat, aman & terkini.",
+    description:
+      "Sudah punya website? Saya bisa memodernisasi desain yang usang, memperbaiki bug, meningkatkan performa, atau mengambil alih maintenance rutin agar situs Anda tetap aman, cepat, dan andal seiring pertumbuhan bisnis Anda.",
+    deliverables: [
+      "Redesain / revamp",
+      "Optimasi performa",
+      "Perbaikan bug",
+      "Dukungan berkelanjutan",
+    ],
+  },
+];
+
+export const services = LANG === "id" ? servicesID : servicesEN;
+
+// ── Experience ──────────────────────────────────────────────────────────────
 export interface IExperience {
   id: number;
   startYear: string;
@@ -31,7 +190,7 @@ export interface IExperience {
   stacks: string[];
 }
 
-export const experiences: IExperience[] = [
+const experiencesEN: IExperience[] = [
   {
     id: 0,
     startYear: "2022",
@@ -39,22 +198,58 @@ export const experiences: IExperience[] = [
     role: "Fullstack Web Developer",
     company: "Purwadhika",
     description:
-      "I developed and maintained multiple applications at Purwadhika, including the Landing Page, Student Dashboard, Admin Dashboard, Purwadhika Career Network, Purwadhika College, and the Corporate Training Dashboard. These projects were built using a modern tech stack consisting of TypeScript, JavaScript, React.js, Next.js, Material UI, Express.js, Sequelize, and MySQL.",
+      "I've led development on 6+ web platforms at Purwadhika — including the landing page, admin dashboard, student dashboard, Purwadhika Career Network, and Purwadhika College — improving the experience for 500+ users. Built with Node.js, JavaScript, TypeScript, and Express.js/Sequelize on the backend, and React.js/Next.js on the frontend, with MySQL as the database.",
     stacks: [
       "Node.js",
       "Javascript",
       "Typescript",
       "React.js",
       "Next.js",
-      "MUI",
       "Express.js",
       "Sequelize",
       "MySQL",
-      "CMS",
     ],
   },
   {
     id: 1,
+    startYear: "AUG 2025",
+    endYear: "PRESENT",
+    role: "Fullstack Web Developer",
+    company: "Tariot Agency (Singapore, Remote)",
+    description:
+      "I help build full-stack web and mobile applications for automotive service appointment systems serving Toyota and Lexus dealerships — including the NBT and JMP admin dashboards, the NBT mobile booking app, and their supporting APIs. I also built a product landing page for Roachout, a pest-control brand based in Brunei.",
+    stacks: ["Node.js", "Typescript", "Next.js", "React Native", "Express.js"],
+  },
+  {
+    id: 2,
+    startYear: "MAR",
+    endYear: "SEP 2025",
+    role: "Fullstack Web Development Lecturer",
+    company: "Purwadhika",
+    description:
+      "I taught the Full-Stack Web Development program end to end — from JavaScript fundamentals, HTML, and CSS through to React.js, Next.js, Tailwind CSS, Express.js, and Prisma, with TypeScript as the primary language — guiding students to build a fully functional full-stack application as their final project.",
+    stacks: [
+      "Javascript",
+      "Typescript",
+      "React.js",
+      "Next.js",
+      "Tailwind",
+      "Express.js",
+      "Prisma",
+    ],
+  },
+  {
+    id: 3,
+    startYear: "APRIL",
+    endYear: "JUNE 2024",
+    role: "Fullstack Web Developer (Part-time)",
+    company: "Kirei Wash",
+    description:
+      "I contributed to the Kirei Wash application, working on the landing page, employee app, admin dashboard, and API using TypeScript, Next.js, NestJS, and Prisma, and added unit tests with Jest for reliability.",
+    stacks: ["Typescript", "Next.js", "NestJS", "Prisma", "Jest"],
+  },
+  {
+    id: 4,
     startYear: "APRIL",
     endYear: "JUNE 2023",
     role: "Fullstack Web Development Mentor",
@@ -75,26 +270,106 @@ export const experiences: IExperience[] = [
   },
 ];
 
+const experiencesID: IExperience[] = [
+  {
+    id: 0,
+    startYear: "2022",
+    endYear: "SEKARANG",
+    role: "Fullstack Web Developer",
+    company: "Purwadhika",
+    description:
+      "Saya memimpin pengembangan 6+ platform web di Purwadhika — termasuk landing page, admin dashboard, student dashboard, Purwadhika Career Network, dan Purwadhika College — meningkatkan pengalaman untuk 500+ pengguna. Dibangun dengan Node.js, JavaScript, TypeScript, serta Express.js/Sequelize di backend, dan React.js/Next.js di frontend, dengan MySQL sebagai database.",
+    stacks: [
+      "Node.js",
+      "Javascript",
+      "Typescript",
+      "React.js",
+      "Next.js",
+      "Express.js",
+      "Sequelize",
+      "MySQL",
+    ],
+  },
+  {
+    id: 1,
+    startYear: "AGT 2025",
+    endYear: "SEKARANG",
+    role: "Fullstack Web Developer",
+    company: "Tariot Agency (Singapura, Remote)",
+    description:
+      "Saya membantu membangun aplikasi web dan mobile full-stack untuk sistem appointment servis otomotif yang melayani dealer Toyota dan Lexus — termasuk admin dashboard NBT dan JMP, aplikasi mobile booking NBT, serta API pendukungnya. Saya juga membuat landing page produk untuk Roachout, brand pest-control asal Brunei.",
+    stacks: ["Node.js", "Typescript", "Next.js", "React Native", "Express.js"],
+  },
+  {
+    id: 2,
+    startYear: "MAR",
+    endYear: "SEP 2025",
+    role: "Dosen Fullstack Web Development",
+    company: "Purwadhika",
+    description:
+      "Saya mengajar program Full-Stack Web Development secara menyeluruh — dari dasar-dasar JavaScript, HTML, dan CSS hingga React.js, Next.js, Tailwind CSS, Express.js, dan Prisma, dengan TypeScript sebagai bahasa utama — membimbing siswa membangun aplikasi full-stack yang berfungsi penuh sebagai proyek akhir.",
+    stacks: [
+      "Javascript",
+      "Typescript",
+      "React.js",
+      "Next.js",
+      "Tailwind",
+      "Express.js",
+      "Prisma",
+    ],
+  },
+  {
+    id: 3,
+    startYear: "APRIL",
+    endYear: "JUNI 2024",
+    role: "Fullstack Web Developer (Part-time)",
+    company: "Kirei Wash",
+    description:
+      "Saya berkontribusi pada aplikasi Kirei Wash, mengerjakan landing page, employee app, admin dashboard, dan API menggunakan TypeScript, Next.js, NestJS, dan Prisma, serta menambahkan unit test dengan Jest untuk keandalan.",
+    stacks: ["Typescript", "Next.js", "NestJS", "Prisma", "Jest"],
+  },
+  {
+    id: 4,
+    startYear: "APRIL",
+    endYear: "JUNI 2023",
+    role: "Mentor Fullstack Web Development",
+    company: "Purwadhika",
+    description:
+      "Saya membimbing 6 tim proyek dalam 2 batch, mengarahkan siswa membangun aplikasi yang siap produksi. Peran saya mencakup melakukan code review, membantu debugging, dan berbagi praktik terbaik dalam JavaScript dan React.",
+    stacks: [
+      "Node.js",
+      "Javascript",
+      "Typescript",
+      "React.js",
+      "Next.js",
+      "Tailwind",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL",
+    ],
+  },
+];
+
+export const experiences = LANG === "id" ? experiencesID : experiencesEN;
+
+// ── Professional projects (client-work proof) ───────────────────────────────
 export interface IProfessionalProject {
   id: number;
   title: string;
   image: string;
   subtitle: string;
-  description: string;
   websiteURL: string | null;
   sourceCodeURL: string | null;
   stacks: string[];
 }
 
-export const professionalProjects: IProfessionalProject[] = [
+const professionalProjectsEN: IProfessionalProject[] = [
   {
     id: 0,
     title: "Purwadhika Marketing Website",
-    image: "",
+    image: "/static/projects/purwadhika.png",
     subtitle:
       "A marketing website for Purwadhika that showcases programs and information using a modern full-stack tech stack.",
-    description:
-      "Purwadhika Main Website serves as the central marketing platform for Purwadhika, providing comprehensive information about its various programs while offering an integrated feature for purchasing courses online. Built with TypeScript, Next.js, Material UI, Express.js, Sequelize, and MySQL, the website is supported by Strapi as the content management system to ensure flexibility and scalability in managing content. It also integrates Midtrans as the payment gateway, allowing users to seamlessly buy Purwadhika’s courses directly through the platform, combining modern design, robust backend architecture, and secure transactions in one unified system.",
     websiteURL: "https://purwadhika.com/",
     sourceCodeURL: null,
     stacks: [
@@ -111,11 +386,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 1,
     title: "Purwadhika Student Dashboard",
-    image: "",
+    image: "/static/projects/purwadhika.png",
     subtitle:
       "Purwadhika Student Dashboard is a centralized platform for students to access their programs, manage transactions, connect with alumni, and explore job opportunities.",
-    description:
-      "Purwadhika Student Dashboard is a comprehensive web platform designed to enhance the student learning experience by providing access to all essential features in one place. Students can view and manage their registered programs, track transaction history, watch live or recorded course streams, and download certificates upon completion. The platform also fosters community building through alumni connections and supports career growth via an integrated job portal. Additionally, students can manage their personal information with an easy-to-use profile editing feature, making the dashboard a complete hub for academic, professional, and networking needs.",
     websiteURL: null,
     sourceCodeURL: null,
     stacks: [
@@ -131,11 +404,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 2,
     title: "Purwadhika Admin Dashboard",
-    image: "",
+    image: "/static/projects/purwadhika.png",
     subtitle:
       "Purwadhika Admin Dashboard is a management platform for handling programs, users, students, alumni, transactions, grades, and data reporting.",
-    description:
-      "Purwadhika Admin Dashboard is a robust and feature-rich web application built to support the operational and academic management needs of Purwadhika. Through this platform, administrators can efficiently manage programs, oversee student and alumni records, monitor user activity, and process transactions. It also provides tools for handling student grades, tracking academic performance, and generating detailed data reports to support decision-making. With centralized access to key information and streamlined workflows, the dashboard empowers administrators to maintain smooth operations, ensure data accuracy, and enhance the overall educational ecosystem of Purwadhika.",
     websiteURL: null,
     sourceCodeURL: null,
     stacks: [
@@ -151,11 +422,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 3,
     title: "Purwadhika College",
-    image: "",
+    image: "/static/projects/purwadhika.png",
     subtitle:
-      "Purwadhika College is an informational landing page showcasing Purwadhika’s collaborative programs with various international universities.",
-    description:
-      "Purwadhika College is a dedicated landing page designed to provide clear and engaging information about Purwadhika’s collaborative programs with renowned international universities. The website highlights partnership details, program offerings, and the unique opportunities available for students who wish to pursue global academic pathways. With a focus on presenting programs in a professional and accessible manner, Purwadhika College serves as a trusted resource for prospective students to explore educational collaborations, understand program benefits, and gain insights into international study options offered through Purwadhika.",
+      "Purwadhika College is an informational landing page showcasing Purwadhikaâ€™s collaborative programs with various international universities.",
     websiteURL: "https://college.purwadhika.com/",
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
@@ -163,11 +432,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 4,
     title: "Purwadhika School of Design",
-    image: "",
+    image: "/static/projects/purwadhika.png",
     subtitle:
       "Purwadhika School of Design is a landing page that introduces programs in creative fields such as UI/UX, 3D Animation, and other design-related studies.",
-    description:
-      "Purwadhika School of Design is a specialized landing page created to present and promote Purwadhika’s design-focused programs. The platform highlights a range of creative disciplines, including UI/UX Design, 3D Animation, and other design-related courses tailored for students aspiring to enter the creative industry. With a clean and visually appealing layout, the website provides detailed program information, career pathways, and learning outcomes to help prospective students make informed decisions. By emphasizing creativity, innovation, and industry relevance, Purwadhika School of Design serves as a gateway for future designers to explore and pursue their passions in the design field.",
     websiteURL: "https://schoolofdesign.purwadhika.com/",
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
@@ -175,11 +442,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 5,
     title: "Kirei Wash Landing Page",
-    image: "",
+    image: "/static/projects/kirei.png",
     subtitle:
       "Kirei Wash Landing Page is a product-focused website that provides information about Kirei Wash and its offerings.",
-    description:
-      "Kirei Wash Landing Page is a clean and informative website designed to showcase Kirei Wash products and services. The page highlights product features, benefits, and usage details to help customers understand the value of Kirei Wash. With a user-friendly layout and visually engaging presentation, the website effectively communicates the brand’s identity while guiding visitors through product information and calls-to-action. Serving as both a marketing tool and an information hub, the Kirei Wash Landing Page aims to attract potential customers and strengthen brand presence online.",
     websiteURL: "https://kireiwash.com/",
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
@@ -187,11 +452,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 6,
     title: "Kirei Wash Admin Dashboard",
-    image: "",
+    image: "/static/projects/kirei.png",
     subtitle:
       "Kirei Wash Admin Dashboard is a management platform for overseeing services, transactions, users, employees, and business operations.",
-    description:
-      "Kirei Wash Admin Dashboard is a comprehensive web application built to streamline the management and operational processes of Kirei Wash. Through this platform, administrators can efficiently manage and update available services, monitor and process customer transactions, and maintain user and employee records. The dashboard also provides tools for tracking business activities, generating reports, and ensuring smooth day-to-day operations. By centralizing essential functions into one system, the Kirei Wash Admin Dashboard enhances efficiency, improves data accuracy, and supports better decision-making for business growth.",
     websiteURL: null,
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
@@ -199,11 +462,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 7,
     title: "Kirei Wash Employee Dashboard",
-    image: "",
+    image: "/static/projects/kirei.png",
     subtitle:
       "Kirei Wash Employee Dashboard is a platform for employees to manage tasks, track services, monitor attendance, and handle daily responsibilities.",
-    description:
-      "Kirei Wash Employee Dashboard is a dedicated web application designed to support employees in managing their daily activities and responsibilities effectively. The platform provides features for tracking attendance and absences, managing assigned tasks, and monitoring ongoing service progress. Employees can easily view their work schedules, update task statuses, and ensure service quality through the dashboard. By offering a centralized and organized system, the Kirei Wash Employee Dashboard helps improve productivity, streamline workflows, and maintain clear communication between staff and management.",
     websiteURL: null,
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
@@ -211,11 +472,9 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 8,
     title: "English Talker United Landing Page",
-    image: "",
+    image: "/static/projects/etu.png",
     subtitle:
       "English Talker United Landing Page is a website showcasing English learning programs with a contact feature for users to connect with the admin.",
-    description:
-      "English Talker United Landing Page is an informative website designed to present the various English learning programs offered by English Talker United. The platform highlights available courses, their benefits, and program details to help prospective learners choose the right path for improving their English skills. Additionally, the website provides a “Contact Us” feature where users can easily submit inquiries or requests, enabling direct communication with the admin. With a clear structure and user-friendly interface, the landing page serves both as a marketing tool and a communication bridge between the institution and potential students.",
     websiteURL: "https://englishtalkerunited.com/",
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
@@ -223,63 +482,142 @@ export const professionalProjects: IProfessionalProject[] = [
   {
     id: 9,
     title: "English Talker United Admin Dashboard (Ongoing Project)",
-    image: "",
+    image: "/static/projects/etu.png",
     subtitle:
       "English Talker United Admin Dashboard is a management platform for handling users, courses, schedules, student progress, and inquiries.",
-    description:
-      "English Talker United Admin Dashboard is a powerful web application designed to streamline the administrative operations of English Talker United. Through this platform, administrators can manage users, track advertising performance, and handle student enquiries efficiently. The system also provides features for organizing and updating course modules, scheduling classes, and monitoring student attendance. Additionally, it supports academic oversight by tracking student grades and progress throughout the programs. By centralizing these functions, the dashboard improves operational efficiency, ensures accurate data management, and enhances the overall learning experience for students.",
     websiteURL: null,
     sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
   },
 ];
 
-export interface IPersonalProject {
-  id: number;
-  title: string;
-  image: string;
-  websiteURL: string | null;
-  sourceCodeURL: string | null;
-  description: string;
-  stacks: string[];
-}
-
-export const personalProjects: IPersonalProject[] = [
+const professionalProjectsID: IProfessionalProject[] = [
   {
     id: 0,
-    title: "Pokédex App",
-    image: "",
-    websiteURL: "https://pokedex-app-lake-kappa.vercel.app/",
-    description:
-      "A simple Pokedex web app that lists Pokémon and lets users view detailed info for each, optimized for mobile.",
-    stacks: ["Node.js", "Typescript", "Next.js", "TailwindCSS", "Shadcn"],
-    sourceCodeURL: "https://github.com/gangsararyop/pokedex-app",
+    title: "Purwadhika Marketing Website",
+    image: "/static/projects/purwadhika.png",
+    subtitle:
+      "Website marketing untuk Purwadhika yang menampilkan program dan informasi menggunakan tech stack full-stack modern.",
+    websiteURL: "https://purwadhika.com/",
+    sourceCodeURL: null,
+    stacks: [
+      "Node.js",
+      "Typescript",
+      "Next.js",
+      "MUI",
+      "Express.js",
+      "Sequelize",
+      "MySQL",
+      "CMS",
+    ],
   },
   {
     id: 1,
-    title: "File Explorer App",
-    image: "",
+    title: "Purwadhika Student Dashboard",
+    image: "/static/projects/purwadhika.png",
+    subtitle:
+      "Purwadhika Student Dashboard adalah platform terpusat bagi siswa untuk mengakses program mereka, mengelola transaksi, terhubung dengan alumni, dan menjelajahi peluang kerja.",
     websiteURL: null,
-    description:
-      "A simple web-based File Explorer that mimics the look and feel of a desktop file management system.",
+    sourceCodeURL: null,
     stacks: [
-      "Bun",
+      "Node.js",
       "Typescript",
-      "Vue.js",
-      "TailwindCSS",
-      "Elysia",
-      "DrizzleORM",
+      "React.js",
+      "MUI",
+      "Express.js",
+      "Sequelize",
+      "MySQL",
     ],
-    sourceCodeURL: "https://github.com/gangsararyop/infokes-assessment",
   },
   {
     id: 2,
-    title: "Portfolio Website",
-    image: "",
-    websiteURL: "https://portfolio-745u.vercel.app/",
-    description:
-      "A personal portfolio website showcasing my background, skills, and projects.",
-    stacks: ["Node.js", "Typescript", "Next.js", "TailwindCSS"],
-    sourceCodeURL: "https://github.com/gangsararyop/portfolio",
+    title: "Purwadhika Admin Dashboard",
+    image: "/static/projects/purwadhika.png",
+    subtitle:
+      "Purwadhika Admin Dashboard adalah platform manajemen untuk menangani program, pengguna, siswa, alumni, transaksi, nilai, dan pelaporan data.",
+    websiteURL: null,
+    sourceCodeURL: null,
+    stacks: [
+      "Node.js",
+      "Typescript",
+      "React.js",
+      "MUI",
+      "Express.js",
+      "Sequelize",
+      "MySQL",
+    ],
+  },
+  {
+    id: 3,
+    title: "Purwadhika College",
+    image: "/static/projects/purwadhika.png",
+    subtitle:
+      "Purwadhika College adalah landing page informatif yang menampilkan program kolaborasi Purwadhika dengan berbagai universitas internasional.",
+    websiteURL: "https://college.purwadhika.com/",
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
+  },
+  {
+    id: 4,
+    title: "Purwadhika School of Design",
+    image: "/static/projects/purwadhika.png",
+    subtitle:
+      "Purwadhika School of Design adalah landing page yang memperkenalkan program di bidang kreatif seperti UI/UX, 3D Animation, dan studi desain lainnya.",
+    websiteURL: "https://schoolofdesign.purwadhika.com/",
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
+  },
+  {
+    id: 5,
+    title: "Kirei Wash Landing Page",
+    image: "/static/projects/kirei.png",
+    subtitle:
+      "Kirei Wash Landing Page adalah website yang berfokus pada produk untuk memberikan informasi tentang Kirei Wash dan penawarannya.",
+    websiteURL: "https://kireiwash.com/",
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
+  },
+  {
+    id: 6,
+    title: "Kirei Wash Admin Dashboard",
+    image: "/static/projects/kirei.png",
+    subtitle:
+      "Kirei Wash Admin Dashboard adalah platform manajemen untuk mengawasi layanan, transaksi, pengguna, karyawan, dan operasional bisnis.",
+    websiteURL: null,
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
+  },
+  {
+    id: 7,
+    title: "Kirei Wash Employee Dashboard",
+    image: "/static/projects/kirei.png",
+    subtitle:
+      "Kirei Wash Employee Dashboard adalah platform bagi karyawan untuk mengelola tugas, melacak layanan, memantau kehadiran, dan menangani tanggung jawab harian.",
+    websiteURL: null,
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
+  },
+  {
+    id: 8,
+    title: "English Talker United Landing Page",
+    image: "/static/projects/etu.png",
+    subtitle:
+      "English Talker United Landing Page adalah website yang menampilkan program belajar bahasa Inggris dengan fitur kontak agar pengguna dapat terhubung dengan admin.",
+    websiteURL: "https://englishtalkerunited.com/",
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
+  },
+  {
+    id: 9,
+    title: "English Talker United Admin Dashboard (Proyek Berjalan)",
+    image: "/static/projects/etu.png",
+    subtitle:
+      "English Talker United Admin Dashboard adalah platform manajemen untuk menangani pengguna, kursus, jadwal, progres siswa, dan pertanyaan.",
+    websiteURL: null,
+    sourceCodeURL: null,
+    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
   },
 ];
+
+export const professionalProjects =
+  LANG === "id" ? professionalProjectsID : professionalProjectsEN;
