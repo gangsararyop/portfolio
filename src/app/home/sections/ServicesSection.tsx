@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ServiceCard from "../components/ServiceCard";
 import Reveal from "../components/Reveal";
@@ -10,6 +11,7 @@ const ServicesSection = () => {
   const { ref } = useInView({
     threshold: 1,
   });
+  const [openId, setOpenId] = useState<number | null>(services[0].id);
 
   return (
     <section id="services" ref={ref} className="mb-24">
@@ -23,10 +25,16 @@ const ServicesSection = () => {
         </p>
       </Reveal>
 
-      <div className="flex flex-col gap-5">
+      <div className="rounded-3xl overflow-hidden border border-[rgb(from_#98b7d4_r_g_b_/_.15)] bg-[rgb(from_#98b7d4_r_g_b_/_.04)] divide-y divide-[rgb(from_#98b7d4_r_g_b_/_.15)]">
         {services.map((service, index) => (
           <Reveal key={service.id} delay={index * 0.08}>
-            <ServiceCard service={service} />
+            <ServiceCard
+              service={service}
+              open={openId === service.id}
+              onToggle={() =>
+                setOpenId(openId === service.id ? null : service.id)
+              }
+            />
           </Reveal>
         ))}
       </div>

@@ -3,7 +3,7 @@
 import { useInView } from "react-intersection-observer";
 import ProjectCard from "../components/ProjectCard";
 import Reveal from "../components/Reveal";
-import { professionalProjects } from "../static";
+import { clientWorks } from "../static";
 import { ui } from "../static/ui";
 
 const WorkSection = () => {
@@ -23,10 +23,10 @@ const WorkSection = () => {
         </p>
       </Reveal>
 
-      <div className="flex flex-col gap-20">
-        {professionalProjects.map((professionalProject) => (
-          <Reveal key={professionalProject.id}>
-            <ProjectCard professionalProject={professionalProject} />
+      <div className="flex flex-col gap-10">
+        {clientWorks.map((work) => (
+          <Reveal key={work.id}>
+            <ProjectCard work={work} />
           </Reveal>
         ))}
       </div>

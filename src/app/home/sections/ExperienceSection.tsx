@@ -1,8 +1,6 @@
 "use client";
 
-// import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-// import { Icon } from "@iconify/react";
 import ExperienceCard from "../components/ExperienceCard";
 import Reveal from "../components/Reveal";
 import { experiences } from "../static";
@@ -37,19 +35,6 @@ const ExperienceSection = () => {
           </Reveal>
         ))}
       </div>
-
-      {/* <Link href="/static/cv_gangsar_aryo.pdf" download="CV Gangsar Aryo.pdf">
-        <div className="group flex flex-row items-center gap-1 cursor-pointer">
-          <p className="text-lg font-medium transition-[color] duration-150 text-[#e1ecf3] group-hover:text-[#98b7d4]">
-            View Resume
-          </p>
-
-          <Icon
-            icon="heroicons:arrow-up-right-20-solid"
-            className="size-4 relative left-0 top-0 transition-[top,left] duration-150 text-[#e1ecf3] group-hover:text-[#98b7d4] group-hover:-top-1 group-hover:left-1"
-          />
-        </div>
-      </Link> */}
     </section>
   );
 };

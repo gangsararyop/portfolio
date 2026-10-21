@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cv": "node cv/build.mjs"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",

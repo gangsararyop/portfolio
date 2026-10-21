@@ -10,6 +10,7 @@ import {
   EMAIL_URL,
   GITHUB_URL,
   LINKEDIN_URL,
+  CV_URL,
 } from "./static/contact";
 import useInViewport from "./hooks/useInViewport";
 import { Icon } from "@iconify/react";
@@ -47,9 +48,9 @@ const Homepage = () => {
                   {ui.hero.intro}
                 </p>
 
-                <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:mb-16">
-                  <Link href={WHATSAPP_URL} target="_blank" className="w-full sm:w-auto">
-                    <div className="group flex flex-row items-center justify-center sm:justify-start gap-2 rounded-full px-5 py-2.5 bg-[#98b7d4] transition-[opacity] duration-150 hover:opacity-90">
+                <div className="grid grid-cols-2 gap-3 max-w-[420px] md:mb-16">
+                  <Link href={WHATSAPP_URL} target="_blank" className="col-span-2">
+                    <div className="group flex flex-row items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-[#98b7d4] transition-[opacity] duration-150 hover:opacity-90">
                       <Icon
                         icon="mdi:whatsapp"
                         className="size-5 text-[#030608]"
@@ -60,8 +61,8 @@ const Homepage = () => {
                     </div>
                   </Link>
 
-                  <Link href={EMAIL_URL} className="w-full sm:w-auto">
-                    <div className="group flex flex-row items-center justify-center sm:justify-start gap-2 rounded-full px-5 py-2.5 border border-[rgb(from_#98b7d4_r_g_b_/_.4)] transition-[border-color] duration-150 hover:border-[#98b7d4]">
+                  <Link href={EMAIL_URL}>
+                    <div className="group flex flex-row items-center justify-center gap-2 rounded-full px-5 py-2.5 border border-[rgb(from_#98b7d4_r_g_b_/_.4)] transition-[border-color] duration-150 hover:border-[#98b7d4]">
                       <Icon
                         icon="heroicons:envelope-20-solid"
                         className="size-5 text-[#e1ecf3]"
@@ -71,6 +72,18 @@ const Homepage = () => {
                       </p>
                     </div>
                   </Link>
+
+                  <a href={CV_URL} target="_blank">
+                    <div className="group flex flex-row items-center justify-center gap-2 rounded-full px-5 py-2.5 border border-[rgb(from_#98b7d4_r_g_b_/_.4)] transition-[border-color] duration-150 hover:border-[#98b7d4]">
+                      <Icon
+                        icon="heroicons:document-text-20-solid"
+                        className="size-5 text-[#e1ecf3]"
+                      />
+                      <p className="font-semibold text-[#e1ecf3]">
+                        {ui.hero.viewCv}
+                      </p>
+                    </div>
+                  </a>
                 </div>
 
                 <div className="flex flex-row items-center gap-4 mt-6 mb-8 md:mt-0 md:mb-16">

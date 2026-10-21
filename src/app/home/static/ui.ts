@@ -13,6 +13,7 @@ const en = {
       "Fullstack web developer based in Indonesia. From landing pages to e-commerce and custom management systems — built to be fast, reliable, and ready to scale.",
     whatsappCta: "Hire me on WhatsApp",
     emailCta: "Email me",
+    viewCv: "View CV",
   },
   about: {
     paragraph1:
@@ -42,7 +43,8 @@ const en = {
     emailCta: "Email me",
   },
   projectCard: {
-    sourceCode: "Source Code",
+    viewMore: "View more",
+    viewLess: "Show less",
   },
 };
 
@@ -55,6 +57,7 @@ const id: typeof en = {
       "Fullstack web developer yang berbasis di Indonesia. Dari landing page hingga e-commerce dan sistem manajemen custom — dibuat agar cepat, andal, dan siap berkembang.",
     whatsappCta: "Hubungi via WhatsApp",
     emailCta: "Email saya",
+    viewCv: "Lihat CV",
   },
   about: {
     paragraph1:
@@ -84,7 +87,8 @@ const id: typeof en = {
     emailCta: "Email saya",
   },
   projectCard: {
-    sourceCode: "Source Code",
+    viewMore: "Lihat lainnya",
+    viewLess: "Tampilkan lebih sedikit",
   },
 };
 

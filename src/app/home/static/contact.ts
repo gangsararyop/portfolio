@@ -5,6 +5,8 @@ export const EMAIL = "gangsararyo@gmail.com";
 export const WHATSAPP_NUMBER = "6281381195762";
 export const GITHUB_URL = "https://github.com/gangsararyop";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/gangsar-aryo";
+// Generated from cv/cv.html by `npm run cv`.
+export const CV_URL = "/static/cv_gangsar_aryo.pdf";
 
 // Prefilled WhatsApp message + email subject, kept in both languages so they
 // follow the active LANG (see ./lang.ts).

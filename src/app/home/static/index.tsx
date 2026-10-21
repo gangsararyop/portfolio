@@ -82,7 +82,7 @@ const servicesEN: IService[] = [
     title: "Management Systems",
     tagline: "Digitize and streamline your operations.",
     description:
-      "Internal systems built around your operations to replace spreadsheets and manual work â€” including HRIS (attendance, payroll, leave), POS / cashier, inventory & stock, CRM, learning management (LMS), and booking / reservation systems.",
+      "Internal systems built around your operations to replace spreadsheets and manual work — including HRIS (attendance, payroll, leave), POS / cashier, inventory & stock, CRM, learning management (LMS), and booking / reservation systems.",
     deliverables: [
       "HRIS",
       "POS / Cashier",
@@ -180,92 +180,95 @@ const servicesID: IService[] = [
 export const services = LANG === "id" ? servicesID : servicesEN;
 
 // ── Experience ──────────────────────────────────────────────────────────────
-export interface IExperience {
-  id: number;
+export interface IExperienceRole {
+  role: string;
   startYear: string;
   endYear: string;
-  role: string;
-  company: string;
   description: string;
+}
+
+export interface IExperience {
+  id: number;
+  company: string;
+  startYear: string;
+  endYear: string;
   stacks: string[];
+  roles: IExperienceRole[];
 }
 
 const experiencesEN: IExperience[] = [
   {
     id: 0,
+    company: "Purwadhika",
     startYear: "2022",
     endYear: "PRESENT",
-    role: "Fullstack Web Developer",
-    company: "Purwadhika",
-    description:
-      "I've led development on 6+ web platforms at Purwadhika — including the landing page, admin dashboard, student dashboard, Purwadhika Career Network, and Purwadhika College — improving the experience for 500+ users. Built with Node.js, JavaScript, TypeScript, and Express.js/Sequelize on the backend, and React.js/Next.js on the frontend, with MySQL as the database.",
     stacks: [
       "Node.js",
       "Javascript",
       "Typescript",
       "React.js",
       "Next.js",
+      "Tailwind",
       "Express.js",
       "Sequelize",
+      "Prisma",
       "MySQL",
+      "PostgreSQL",
+    ],
+    roles: [
+      {
+        role: "Fullstack Web Developer",
+        startYear: "2022",
+        endYear: "PRESENT",
+        description:
+          "I've led development on 6+ web platforms at Purwadhika — including the landing page, admin dashboard, student dashboard, Purwadhika Career Network, and Purwadhika College — improving the experience for 500+ users. Built with Node.js, JavaScript, TypeScript, and Express.js/Sequelize on the backend, and React.js/Next.js on the frontend, with MySQL as the database.",
+      },
+      {
+        role: "Fullstack Web Development Lecturer",
+        startYear: "MAR 2025",
+        endYear: "SEP 2025",
+        description:
+          "I taught the Full-Stack Web Development program end to end — from JavaScript fundamentals, HTML, and CSS through to React.js, Next.js, Tailwind CSS, Express.js, and Prisma, with TypeScript as the primary language — guiding students to build a fully functional full-stack application as their final project.",
+      },
+      {
+        role: "Fullstack Web Development Mentor",
+        startYear: "APR 2023",
+        endYear: "JUN 2023",
+        description:
+          "I mentored 6 project teams across 2 batches, guiding students in building production-ready applications. My role included providing code reviews, debugging support, and sharing best practices in JavaScript and React.",
+      },
     ],
   },
   {
     id: 1,
-    startYear: "AUG 2025",
-    endYear: "PRESENT",
-    role: "Fullstack Web Developer",
     company: "Tariot Agency (Singapore, Remote)",
-    description:
-      "I help build full-stack web and mobile applications for automotive service appointment systems serving Toyota and Lexus dealerships — including the NBT and JMP admin dashboards, the NBT mobile booking app, and their supporting APIs. I also built a product landing page for Roachout, a pest-control brand based in Brunei.",
+    startYear: "AUG 2025",
+    endYear: "OCT 2026",
     stacks: ["Node.js", "Typescript", "Next.js", "React Native", "Express.js"],
-  },
-  {
-    id: 2,
-    startYear: "MAR",
-    endYear: "SEP 2025",
-    role: "Fullstack Web Development Lecturer",
-    company: "Purwadhika",
-    description:
-      "I taught the Full-Stack Web Development program end to end — from JavaScript fundamentals, HTML, and CSS through to React.js, Next.js, Tailwind CSS, Express.js, and Prisma, with TypeScript as the primary language — guiding students to build a fully functional full-stack application as their final project.",
-    stacks: [
-      "Javascript",
-      "Typescript",
-      "React.js",
-      "Next.js",
-      "Tailwind",
-      "Express.js",
-      "Prisma",
+    roles: [
+      {
+        role: "Fullstack Web Developer",
+        startYear: "AUG 2025",
+        endYear: "OCT 2026",
+        description:
+          "I helped build full-stack web and mobile applications for automotive service appointment systems serving Toyota and Lexus dealerships — including the NBT and JMP admin dashboards, the NBT mobile booking app, and their supporting APIs. I also built a product landing page for Roachout, a pest-control brand based in Brunei.",
+      },
     ],
   },
   {
-    id: 3,
-    startYear: "APRIL",
-    endYear: "JUNE 2024",
-    role: "Fullstack Web Developer (Part-time)",
+    id: 2,
     company: "Kirei Wash",
-    description:
-      "I contributed to the Kirei Wash application, working on the landing page, employee app, admin dashboard, and API using TypeScript, Next.js, NestJS, and Prisma, and added unit tests with Jest for reliability.",
+    startYear: "APR 2024",
+    endYear: "JUN 2024",
     stacks: ["Typescript", "Next.js", "NestJS", "Prisma", "Jest"],
-  },
-  {
-    id: 4,
-    startYear: "APRIL",
-    endYear: "JUNE 2023",
-    role: "Fullstack Web Development Mentor",
-    company: "Purwadhika",
-    description:
-      "I mentored 6 project teams across 2 batches, guiding students in building production-ready applications. My role included providing code reviews, debugging support, and sharing best practices in JavaScript and React.",
-    stacks: [
-      "Node.js",
-      "Javascript",
-      "Typescript",
-      "React.js",
-      "Next.js",
-      "Tailwind",
-      "Express.js",
-      "Prisma",
-      "PostgreSQL",
+    roles: [
+      {
+        role: "Fullstack Web Developer (Part-time)",
+        startYear: "APR 2024",
+        endYear: "JUN 2024",
+        description:
+          "I contributed to the Kirei Wash application, working on the landing page, employee app, admin dashboard, and API using TypeScript, Next.js, NestJS, and Prisma, and added unit tests with Jest for reliability.",
+      },
     ],
   },
 ];
@@ -273,351 +276,452 @@ const experiencesEN: IExperience[] = [
 const experiencesID: IExperience[] = [
   {
     id: 0,
+    company: "Purwadhika",
     startYear: "2022",
     endYear: "SEKARANG",
-    role: "Fullstack Web Developer",
-    company: "Purwadhika",
-    description:
-      "Saya memimpin pengembangan 6+ platform web di Purwadhika — termasuk landing page, admin dashboard, student dashboard, Purwadhika Career Network, dan Purwadhika College — meningkatkan pengalaman untuk 500+ pengguna. Dibangun dengan Node.js, JavaScript, TypeScript, serta Express.js/Sequelize di backend, dan React.js/Next.js di frontend, dengan MySQL sebagai database.",
     stacks: [
       "Node.js",
       "Javascript",
       "Typescript",
       "React.js",
       "Next.js",
+      "Tailwind",
       "Express.js",
       "Sequelize",
+      "Prisma",
       "MySQL",
+      "PostgreSQL",
+    ],
+    roles: [
+      {
+        role: "Fullstack Web Developer",
+        startYear: "2022",
+        endYear: "SEKARANG",
+        description:
+          "Saya memimpin pengembangan 6+ platform web di Purwadhika — termasuk landing page, admin dashboard, student dashboard, Purwadhika Career Network, dan Purwadhika College — meningkatkan pengalaman untuk 500+ pengguna. Dibangun dengan Node.js, JavaScript, TypeScript, serta Express.js/Sequelize di backend, dan React.js/Next.js di frontend, dengan MySQL sebagai database.",
+      },
+      {
+        role: "Dosen Fullstack Web Development",
+        startYear: "MAR 2025",
+        endYear: "SEP 2025",
+        description:
+          "Saya mengajar program Full-Stack Web Development secara menyeluruh — dari dasar-dasar JavaScript, HTML, dan CSS hingga React.js, Next.js, Tailwind CSS, Express.js, dan Prisma, dengan TypeScript sebagai bahasa utama — membimbing siswa membangun aplikasi full-stack yang berfungsi penuh sebagai proyek akhir.",
+      },
+      {
+        role: "Mentor Fullstack Web Development",
+        startYear: "APR 2023",
+        endYear: "JUN 2023",
+        description:
+          "Saya membimbing 6 tim proyek dalam 2 batch, mengarahkan siswa membangun aplikasi yang siap produksi. Peran saya mencakup melakukan code review, membantu debugging, dan berbagi praktik terbaik dalam JavaScript dan React.",
+      },
     ],
   },
   {
     id: 1,
-    startYear: "AGT 2025",
-    endYear: "SEKARANG",
-    role: "Fullstack Web Developer",
     company: "Tariot Agency (Singapura, Remote)",
-    description:
-      "Saya membantu membangun aplikasi web dan mobile full-stack untuk sistem appointment servis otomotif yang melayani dealer Toyota dan Lexus — termasuk admin dashboard NBT dan JMP, aplikasi mobile booking NBT, serta API pendukungnya. Saya juga membuat landing page produk untuk Roachout, brand pest-control asal Brunei.",
+    startYear: "AGT 2025",
+    endYear: "OKT 2026",
     stacks: ["Node.js", "Typescript", "Next.js", "React Native", "Express.js"],
-  },
-  {
-    id: 2,
-    startYear: "MAR",
-    endYear: "SEP 2025",
-    role: "Dosen Fullstack Web Development",
-    company: "Purwadhika",
-    description:
-      "Saya mengajar program Full-Stack Web Development secara menyeluruh — dari dasar-dasar JavaScript, HTML, dan CSS hingga React.js, Next.js, Tailwind CSS, Express.js, dan Prisma, dengan TypeScript sebagai bahasa utama — membimbing siswa membangun aplikasi full-stack yang berfungsi penuh sebagai proyek akhir.",
-    stacks: [
-      "Javascript",
-      "Typescript",
-      "React.js",
-      "Next.js",
-      "Tailwind",
-      "Express.js",
-      "Prisma",
+    roles: [
+      {
+        role: "Fullstack Web Developer",
+        startYear: "AGT 2025",
+        endYear: "OKT 2026",
+        description:
+          "Saya membantu membangun aplikasi web dan mobile full-stack untuk sistem appointment servis otomotif yang melayani dealer Toyota dan Lexus — termasuk admin dashboard NBT dan JMP, aplikasi mobile booking NBT, serta API pendukungnya. Saya juga membuat landing page produk untuk Roachout, brand pest-control asal Brunei.",
+      },
     ],
   },
   {
-    id: 3,
-    startYear: "APRIL",
-    endYear: "JUNI 2024",
-    role: "Fullstack Web Developer (Part-time)",
+    id: 2,
     company: "Kirei Wash",
-    description:
-      "Saya berkontribusi pada aplikasi Kirei Wash, mengerjakan landing page, employee app, admin dashboard, dan API menggunakan TypeScript, Next.js, NestJS, dan Prisma, serta menambahkan unit test dengan Jest untuk keandalan.",
+    startYear: "APR 2024",
+    endYear: "JUN 2024",
     stacks: ["Typescript", "Next.js", "NestJS", "Prisma", "Jest"],
-  },
-  {
-    id: 4,
-    startYear: "APRIL",
-    endYear: "JUNI 2023",
-    role: "Mentor Fullstack Web Development",
-    company: "Purwadhika",
-    description:
-      "Saya membimbing 6 tim proyek dalam 2 batch, mengarahkan siswa membangun aplikasi yang siap produksi. Peran saya mencakup melakukan code review, membantu debugging, dan berbagi praktik terbaik dalam JavaScript dan React.",
-    stacks: [
-      "Node.js",
-      "Javascript",
-      "Typescript",
-      "React.js",
-      "Next.js",
-      "Tailwind",
-      "Express.js",
-      "Prisma",
-      "PostgreSQL",
+    roles: [
+      {
+        role: "Fullstack Web Developer (Part-time)",
+        startYear: "APR 2024",
+        endYear: "JUN 2024",
+        description:
+          "Saya berkontribusi pada aplikasi Kirei Wash, mengerjakan landing page, employee app, admin dashboard, dan API menggunakan TypeScript, Next.js, NestJS, dan Prisma, serta menambahkan unit test dengan Jest untuk keandalan.",
+      },
     ],
   },
 ];
 
 export const experiences = LANG === "id" ? experiencesID : experiencesEN;
 
-// ── Professional projects (client-work proof) ───────────────────────────────
-export interface IProfessionalProject {
-  id: number;
+// ── Client work (grouped by client) ─────────────────────────────────────────
+export interface IClientProject {
   title: string;
-  image: string;
-  subtitle: string;
+  description: string;
   websiteURL: string | null;
-  sourceCodeURL: string | null;
-  stacks: string[];
 }
 
-const professionalProjectsEN: IProfessionalProject[] = [
+export interface IClientWork {
+  id: number;
+  client: string;
+  image?: string;
+  stacks: string[];
+  projects: IClientProject[];
+}
+
+const clientWorksEN: IClientWork[] = [
   {
     id: 0,
-    title: "Purwadhika Marketing Website",
+    client: "Tariot Agency (Singapore)",
+    stacks: [
+      "Typescript",
+      "Next.js",
+      "React.js",
+      "React Native",
+      "NestJS",
+      "Prisma",
+      "Strapi",
+      "Tailwind",
+    ],
+    projects: [
+      {
+        title: "NBT Mobility Dashboard & API",
+        description:
+          "Built a wide range of features for the admin dashboard and API behind the Toyota & Lexus Brunei service booking app.",
+        websiteURL: null,
+      },
+      {
+        title: "Roachout",
+        description:
+          "Website, CMS, and backend for a Brunei pest-control brand, built end to end.",
+        websiteURL: "https://roachout.shop/",
+      },
+      {
+        title: "Yao Ling Seafood Kitchen",
+        description:
+          "Restaurant website with its own CMS and backend, built end to end.",
+        websiteURL: null,
+      },
+      {
+        title: "Galaxy Pods Website & CMS",
+        description:
+          "Contributed across the website and its Strapi CMS, including the 360° view feature.",
+        websiteURL: "https://galaxypods.com.sg/",
+      },
+      {
+        title: "JMP Dashboard & API",
+        description:
+          "Built a wide range of features for an operations dashboard covering staff, stations, quotations, support tickets, and reports.",
+        websiteURL: null,
+      },
+      {
+        title: "NBT Mobility App",
+        description:
+          "Added features to the customer booking app, such as onboarding and promo pop-ups.",
+        websiteURL: "https://nbtmobility.inchcape.com.bn/",
+      },
+      {
+        title: "Lexus Cup Brunei 2026",
+        description: "Redesigned the event's digital invitation flipbook.",
+        websiteURL: null,
+      },
+    ],
+  },
+  {
+    id: 1,
+    client: "Javelo",
+    stacks: ["Typescript", "Next.js", "React.js", "Hono", "Prisma", "Tailwind"],
+    projects: [
+      {
+        title: "Company Profile Website",
+        description: "Company profile website, built end to end.",
+        websiteURL: "https://naturalcocosugar.com/",
+      },
+      {
+        title: "CMS & API",
+        description:
+          "Admin dashboard to manage the website's content, backed by a custom API.",
+        websiteURL: null,
+      },
+    ],
+  },
+  {
+    id: 2,
+    client: "Soluship",
+    stacks: [
+      "Typescript",
+      "React.js",
+      "Hono",
+      "Drizzle",
+      "PostgreSQL",
+      "BullMQ",
+      "Tailwind",
+    ],
+    projects: [
+      {
+        title: "Solutrack Dashboard",
+        description:
+          "Operations dashboard for managing job orders, profit & loss, and invoices.",
+        websiteURL: null,
+      },
+      {
+        title: "Solutrack API",
+        description:
+          "Backend that syncs customers, job orders, and invoices to Accurate Online accounting.",
+        websiteURL: null,
+      },
+    ],
+  },
+  {
+    id: 3,
+    client: "Purwadhika",
     image: "/static/projects/purwadhika.png",
-    subtitle:
-      "A marketing website for Purwadhika that showcases programs and information using a modern full-stack tech stack.",
-    websiteURL: "https://purwadhika.com/",
-    sourceCodeURL: null,
     stacks: [
       "Node.js",
       "Typescript",
       "Next.js",
+      "React.js",
       "MUI",
       "Express.js",
       "Sequelize",
       "MySQL",
       "CMS",
     ],
+    projects: [
+      {
+        title: "Marketing Website",
+        description:
+          "Main site showcasing programs and information, managed through a CMS.",
+        websiteURL: "https://purwadhika.com/",
+      },
+      {
+        title: "Student Dashboard",
+        description:
+          "Students access their programs, manage transactions, connect with alumni, and find jobs.",
+        websiteURL: null,
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "Manages programs, users, students, alumni, transactions, grades, and reporting.",
+        websiteURL: null,
+      },
+      {
+        title: "Purwadhika College",
+        description:
+          "Landing page for collaborative programs with international universities.",
+        websiteURL: "https://college.purwadhika.com/",
+      },
+      {
+        title: "School of Design",
+        description:
+          "Landing page for creative programs such as UI/UX and 3D Animation.",
+        websiteURL: "https://schoolofdesign.purwadhika.com/",
+      },
+    ],
+  },
+  {
+    id: 4,
+    client: "Kirei Wash",
+    image: "/static/projects/kirei.png",
+    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
+    projects: [
+      {
+        title: "Landing Page",
+        description: "Product-focused website presenting Kirei Wash and its offerings.",
+        websiteURL: "https://kireiwash.com/",
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "Oversees services, transactions, users, employees, and operations.",
+        websiteURL: null,
+      },
+      {
+        title: "Employee Dashboard",
+        description:
+          "Employees manage tasks, track services, and monitor attendance.",
+        websiteURL: null,
+      },
+    ],
+  },
+];
+
+const clientWorksID: IClientWork[] = [
+  {
+    id: 0,
+    client: "Tariot Agency (Singapura)",
+    stacks: [
+      "Typescript",
+      "Next.js",
+      "React.js",
+      "React Native",
+      "NestJS",
+      "Prisma",
+      "Strapi",
+      "Tailwind",
+    ],
+    projects: [
+      {
+        title: "NBT Mobility Dashboard & API",
+        description:
+          "Membangun banyak fitur untuk admin dashboard dan API di balik aplikasi booking servis Toyota & Lexus Brunei.",
+        websiteURL: null,
+      },
+      {
+        title: "Roachout",
+        description:
+          "Website, CMS, dan backend untuk brand pest-control asal Brunei, dibangun dari awal hingga akhir.",
+        websiteURL: "https://roachout.shop/",
+      },
+      {
+        title: "Yao Ling Seafood Kitchen",
+        description:
+          "Website restoran beserta CMS dan backend-nya, dibangun dari awal hingga akhir.",
+        websiteURL: null,
+      },
+      {
+        title: "Galaxy Pods Website & CMS",
+        description:
+          "Berkontribusi di website dan CMS Strapi-nya, termasuk fitur tampilan 360°.",
+        websiteURL: "https://galaxypods.com.sg/",
+      },
+      {
+        title: "JMP Dashboard & API",
+        description:
+          "Membangun banyak fitur untuk dashboard operasional: staf, station, quotation, support ticket, dan laporan.",
+        websiteURL: null,
+      },
+      {
+        title: "NBT Mobility App",
+        description:
+          "Menambahkan fitur di aplikasi booking pelanggan, seperti onboarding dan pop-up promo.",
+        websiteURL: "https://nbtmobility.inchcape.com.bn/",
+      },
+      {
+        title: "Lexus Cup Brunei 2026",
+        description: "Redesign flipbook undangan digital untuk event tersebut.",
+        websiteURL: null,
+      },
+    ],
   },
   {
     id: 1,
-    title: "Purwadhika Student Dashboard",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika Student Dashboard is a centralized platform for students to access their programs, manage transactions, connect with alumni, and explore job opportunities.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: [
-      "Node.js",
-      "Typescript",
-      "React.js",
-      "MUI",
-      "Express.js",
-      "Sequelize",
-      "MySQL",
+    client: "Javelo",
+    stacks: ["Typescript", "Next.js", "React.js", "Hono", "Prisma", "Tailwind"],
+    projects: [
+      {
+        title: "Company Profile Website",
+        description: "Website company profile, dibangun dari awal hingga akhir.",
+        websiteURL: "https://naturalcocosugar.com/",
+      },
+      {
+        title: "CMS & API",
+        description:
+          "Admin dashboard untuk mengelola konten website, didukung API custom.",
+        websiteURL: null,
+      },
     ],
   },
   {
     id: 2,
-    title: "Purwadhika Admin Dashboard",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika Admin Dashboard is a management platform for handling programs, users, students, alumni, transactions, grades, and data reporting.",
-    websiteURL: null,
-    sourceCodeURL: null,
+    client: "Soluship",
     stacks: [
-      "Node.js",
       "Typescript",
       "React.js",
-      "MUI",
-      "Express.js",
-      "Sequelize",
-      "MySQL",
+      "Hono",
+      "Drizzle",
+      "PostgreSQL",
+      "BullMQ",
+      "Tailwind",
+    ],
+    projects: [
+      {
+        title: "Solutrack Dashboard",
+        description:
+          "Dashboard operasional untuk mengelola job order, laba rugi, dan invoice.",
+        websiteURL: null,
+      },
+      {
+        title: "Solutrack API",
+        description:
+          "Backend yang menyinkronkan pelanggan, job order, dan invoice ke Accurate Online.",
+        websiteURL: null,
+      },
     ],
   },
   {
     id: 3,
-    title: "Purwadhika College",
+    client: "Purwadhika",
     image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika College is an informational landing page showcasing Purwadhikaâ€™s collaborative programs with various international universities.",
-    websiteURL: "https://college.purwadhika.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
-  },
-  {
-    id: 4,
-    title: "Purwadhika School of Design",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika School of Design is a landing page that introduces programs in creative fields such as UI/UX, 3D Animation, and other design-related studies.",
-    websiteURL: "https://schoolofdesign.purwadhika.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
-  },
-  {
-    id: 5,
-    title: "Kirei Wash Landing Page",
-    image: "/static/projects/kirei.png",
-    subtitle:
-      "Kirei Wash Landing Page is a product-focused website that provides information about Kirei Wash and its offerings.",
-    websiteURL: "https://kireiwash.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
-  },
-  {
-    id: 6,
-    title: "Kirei Wash Admin Dashboard",
-    image: "/static/projects/kirei.png",
-    subtitle:
-      "Kirei Wash Admin Dashboard is a management platform for overseeing services, transactions, users, employees, and business operations.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
-  },
-  {
-    id: 7,
-    title: "Kirei Wash Employee Dashboard",
-    image: "/static/projects/kirei.png",
-    subtitle:
-      "Kirei Wash Employee Dashboard is a platform for employees to manage tasks, track services, monitor attendance, and handle daily responsibilities.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
-  },
-  {
-    id: 8,
-    title: "English Talker United Landing Page",
-    image: "/static/projects/etu.png",
-    subtitle:
-      "English Talker United Landing Page is a website showcasing English learning programs with a contact feature for users to connect with the admin.",
-    websiteURL: "https://englishtalkerunited.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
-  },
-  {
-    id: 9,
-    title: "English Talker United Admin Dashboard (Ongoing Project)",
-    image: "/static/projects/etu.png",
-    subtitle:
-      "English Talker United Admin Dashboard is a management platform for handling users, courses, schedules, student progress, and inquiries.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
-  },
-];
-
-const professionalProjectsID: IProfessionalProject[] = [
-  {
-    id: 0,
-    title: "Purwadhika Marketing Website",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Website marketing untuk Purwadhika yang menampilkan program dan informasi menggunakan tech stack full-stack modern.",
-    websiteURL: "https://purwadhika.com/",
-    sourceCodeURL: null,
     stacks: [
       "Node.js",
       "Typescript",
       "Next.js",
+      "React.js",
       "MUI",
       "Express.js",
       "Sequelize",
       "MySQL",
       "CMS",
     ],
-  },
-  {
-    id: 1,
-    title: "Purwadhika Student Dashboard",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika Student Dashboard adalah platform terpusat bagi siswa untuk mengakses program mereka, mengelola transaksi, terhubung dengan alumni, dan menjelajahi peluang kerja.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: [
-      "Node.js",
-      "Typescript",
-      "React.js",
-      "MUI",
-      "Express.js",
-      "Sequelize",
-      "MySQL",
+    projects: [
+      {
+        title: "Marketing Website",
+        description:
+          "Situs utama yang menampilkan program dan informasi, dikelola lewat CMS.",
+        websiteURL: "https://purwadhika.com/",
+      },
+      {
+        title: "Student Dashboard",
+        description:
+          "Siswa mengakses program, mengelola transaksi, terhubung dengan alumni, dan mencari kerja.",
+        websiteURL: null,
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "Mengelola program, pengguna, siswa, alumni, transaksi, nilai, dan laporan.",
+        websiteURL: null,
+      },
+      {
+        title: "Purwadhika College",
+        description:
+          "Landing page program kolaborasi dengan universitas internasional.",
+        websiteURL: "https://college.purwadhika.com/",
+      },
+      {
+        title: "School of Design",
+        description:
+          "Landing page program kreatif seperti UI/UX dan 3D Animation.",
+        websiteURL: "https://schoolofdesign.purwadhika.com/",
+      },
     ],
-  },
-  {
-    id: 2,
-    title: "Purwadhika Admin Dashboard",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika Admin Dashboard adalah platform manajemen untuk menangani program, pengguna, siswa, alumni, transaksi, nilai, dan pelaporan data.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: [
-      "Node.js",
-      "Typescript",
-      "React.js",
-      "MUI",
-      "Express.js",
-      "Sequelize",
-      "MySQL",
-    ],
-  },
-  {
-    id: 3,
-    title: "Purwadhika College",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika College adalah landing page informatif yang menampilkan program kolaborasi Purwadhika dengan berbagai universitas internasional.",
-    websiteURL: "https://college.purwadhika.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
   },
   {
     id: 4,
-    title: "Purwadhika School of Design",
-    image: "/static/projects/purwadhika.png",
-    subtitle:
-      "Purwadhika School of Design adalah landing page yang memperkenalkan program di bidang kreatif seperti UI/UX, 3D Animation, dan studi desain lainnya.",
-    websiteURL: "https://schoolofdesign.purwadhika.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
-  },
-  {
-    id: 5,
-    title: "Kirei Wash Landing Page",
+    client: "Kirei Wash",
     image: "/static/projects/kirei.png",
-    subtitle:
-      "Kirei Wash Landing Page adalah website yang berfokus pada produk untuk memberikan informasi tentang Kirei Wash dan penawarannya.",
-    websiteURL: "https://kireiwash.com/",
-    sourceCodeURL: null,
     stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
-  },
-  {
-    id: 6,
-    title: "Kirei Wash Admin Dashboard",
-    image: "/static/projects/kirei.png",
-    subtitle:
-      "Kirei Wash Admin Dashboard adalah platform manajemen untuk mengawasi layanan, transaksi, pengguna, karyawan, dan operasional bisnis.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
-  },
-  {
-    id: 7,
-    title: "Kirei Wash Employee Dashboard",
-    image: "/static/projects/kirei.png",
-    subtitle:
-      "Kirei Wash Employee Dashboard adalah platform bagi karyawan untuk mengelola tugas, melacak layanan, memantau kehadiran, dan menangani tanggung jawab harian.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "Mantine"],
-  },
-  {
-    id: 8,
-    title: "English Talker United Landing Page",
-    image: "/static/projects/etu.png",
-    subtitle:
-      "English Talker United Landing Page adalah website yang menampilkan program belajar bahasa Inggris dengan fitur kontak agar pengguna dapat terhubung dengan admin.",
-    websiteURL: "https://englishtalkerunited.com/",
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
-  },
-  {
-    id: 9,
-    title: "English Talker United Admin Dashboard (Proyek Berjalan)",
-    image: "/static/projects/etu.png",
-    subtitle:
-      "English Talker United Admin Dashboard adalah platform manajemen untuk menangani pengguna, kursus, jadwal, progres siswa, dan pertanyaan.",
-    websiteURL: null,
-    sourceCodeURL: null,
-    stacks: ["Node.js", "Typescript", "Next.js", "MUI"],
+    projects: [
+      {
+        title: "Landing Page",
+        description:
+          "Website berfokus produk yang memperkenalkan Kirei Wash dan penawarannya.",
+        websiteURL: "https://kireiwash.com/",
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "Mengawasi layanan, transaksi, pengguna, karyawan, dan operasional.",
+        websiteURL: null,
+      },
+      {
+        title: "Employee Dashboard",
+        description:
+          "Karyawan mengelola tugas, melacak layanan, dan memantau kehadiran.",
+        websiteURL: null,
+      },
+    ],
   },
 ];
 
-export const professionalProjects =
-  LANG === "id" ? professionalProjectsID : professionalProjectsEN;
+export const clientWorks = LANG === "id" ? clientWorksID : clientWorksEN;
